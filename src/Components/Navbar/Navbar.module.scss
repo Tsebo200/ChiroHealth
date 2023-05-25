@@ -1,0 +1,10 @@
+@import '../../Scss/Styles.scss';
+
+%equal-heights {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+.example_container{
+    @extend %equal-heights;
+}
