@@ -24,16 +24,16 @@ function Navbar() {
   return (
     <AppBar position="static">
       <Toolbar>
-        <IconButton size="large" edge="start" color="inherit" aria-label="logo">
+        <Link to="/"><IconButton size="large" edge="start" color="inherit" aria-label="logo">
           <CatchingPokemon/>
-        </IconButton>
+        </IconButton></Link>
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Tsebo's Poke
         </Typography>
         <Stack direction="row" spacing={1}>
           <Link to='/'><Button color="inherit">Appointment</Button></Link>
-          <Button color="inherit">Patients</Button>
-          <Button color="inherit">Doctors</Button>
+          <Link to='/patients'><Button color="inherit">Patients</Button></Link>
+          <Link to ='/doctors'><Button color="inherit">Doctors</Button></Link>
         </Stack>
         <Stack direction="row" spacing={1}>
           <Avatar></Avatar>
