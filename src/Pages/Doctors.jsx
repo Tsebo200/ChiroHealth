@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import Introduction from '../Components/Introduction/Introduction';
 
 function Doctors() {
   return (
-    <div>Doctors</div>
+    <div>Doctors
+    <Introduction/>
+    </div>
   )
 }
 

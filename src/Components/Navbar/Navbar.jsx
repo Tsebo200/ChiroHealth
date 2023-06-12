@@ -9,22 +9,24 @@ import Typography from '@mui/material/Typography';
 import { Stack } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
+import '../../Scss/Styles.scss';
 
-
-
+const navStyle = {
+  backgroundColor: "#161E31;",
+}
 
 
 function Navbar() {
   return (
-    <AppBar position="sticky">
+    <AppBar position="sticky" sx={navStyle}>
       <Toolbar>
         <Link to="/"><IconButton size="large" edge="start" color="inherit" aria-label="logo">
-          <CatchingPokemon/>
+        <div className={styles.logo_box}></div>
         </IconButton></Link>
-        <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+        <Typography variant="h6" component="div" >
            ChiroHealth
         </Typography>
-        <Stack direction="row" spacing={1}>
+        <Stack direction="row" spacing={11} sx={{ flexGrow: 1 }}>
           <Link to='/'><Button color="inherit">Appointment</Button></Link>
           <Link to='/patients'><Button color="inherit">Patients</Button></Link>
           <Link to ='/doctors'><Button color="inherit">Doctors</Button></Link>

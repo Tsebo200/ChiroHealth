@@ -1,21 +1,24 @@
 import React from 'react';
 import styles from '../Introduction/Introduction.module.scss';
+import Calendar from '../Calendar/Calendar';
 
 function Introduction() {
   return (
-    <div>
+    <>
     {/* <div className='styles.' */}
-        <div className={styles.introduction_container}>
-          <div className={styles.left_side}>
-            <div className={styles.img_container}>
-              <img></img>
-            </div>
-
-          </div>
-
-          <div className={styles.right_side}>
-            <h1>Prof. Dr. Demar De Rozan</h1>
-            <icon></icon>
+    {/* <div className={styles.hor_line_breaker}></div> */}
+        <div className={styles.first_section}>
+          
+          <div className={styles.introduction_container}>
+              <div className={styles.left_side}>
+                  <div className={styles.img_container}>
+                    <img></img>
+                  </div>
+              </div>
+            
+              <div className={styles.right_side}>
+              <h1>Prof. Dr. Demar De Rozan</h1>
+              <icon></icon>
 
             <h2>Specialist Chiropractor</h2>
             <div className={styles.info_btn_one}></div>
@@ -31,12 +34,13 @@ function Introduction() {
                 <div className={styles.icon_two}></div>
                 <div className={styles.icon_three}></div>
               </div>
-
-
-
+            
+              </div>
+              <Calendar/>
           </div>
+        
         </div>
-    </div>
+    </>
   )
 }
 
