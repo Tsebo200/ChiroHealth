@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
-import { CatchingPokemon } from '@mui/icons-material';
 import Typography from '@mui/material/Typography';
 import { Stack } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
@@ -13,6 +12,9 @@ import '../../Scss/Styles.scss';
 
 const navStyle = {
   backgroundColor: "#161E31;",
+}
+const genStyle = {
+  marginLeft: "1000px",
 }
 
 
@@ -27,7 +29,7 @@ function Navbar() {
            ChiroHealth
         </Typography>
         <Stack direction="row" spacing={11} sx={{ flexGrow: 1 }}>
-          <Link to='/'><Button color="inherit">Appointment</Button></Link>
+          <Link to='/'><Button color="inherit" sx={{genStyle}}>Appointment</Button></Link>
           <Link to='/patients'><Button color="inherit">Patients</Button></Link>
           <Link to ='/doctors'><Button color="inherit">Doctors</Button></Link>
         </Stack>

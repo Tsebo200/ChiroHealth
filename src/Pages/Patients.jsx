@@ -1,8 +1,12 @@
 import React from 'react'
+import EnhancedTable from '../Components/Table/EnhancedTable'
 
 function Patients() {
   return (
-    <div>Patients</div>
+<>
+<EnhancedTable/>
+
+</>
   )
 }
 
