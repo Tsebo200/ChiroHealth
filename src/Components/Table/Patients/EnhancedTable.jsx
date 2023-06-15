@@ -23,7 +23,12 @@ import FilterListIcon from '@mui/icons-material/FilterList';
 import { visuallyHidden } from '@mui/utils';
 
 import DisabledByDefaultRoundedIcon from '@mui/icons-material/DisabledByDefaultRounded';
+import EditIcon from '@mui/icons-material/Edit';
 
+
+const tableStyle = {
+  backgroundColor: "#161E31;",
+}
 
 function createData(name, calories, fat, carbs, protein) {
   return {
@@ -36,19 +41,19 @@ function createData(name, calories, fat, carbs, protein) {
 }
 
 const rows = [
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Donut', 452, 25.0, 51, 4.9),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-  createData('Honeycomb', 408, 3.2, 87, 6.5),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Jelly Bean', 375, 0.0, 94, 0.0),
-  createData('KitKat', 518, 26.0, 65, 7.0),
-  createData('Lollipop', 392, 0.2, 98, 0.0),
-  createData('Marshmallow', 318, 0, 81, 2.0),
-  createData('Nougat', 360, 19.0, 9, 37.0),
-  createData('Oreo', 437, 18.0, 63, 4.0),
+  createData('Cupcake', 305, 3.7, 67, <EditIcon/>),
+  createData('Donut', 452, 25.0, 51, <EditIcon/>),
+  createData('Eclair', 262, 16.0, 24, <EditIcon/>),
+  createData('Frozen yoghurt', 159, 6.0, 24, <EditIcon/>),
+  createData('Gingerbread', 356, 16.0, 49, <EditIcon/>),
+  createData('Honeycomb', 408, 3.2, 87, <EditIcon/>),
+  createData('Ice cream sandwich', 237, 9.0, 37, <EditIcon/>),
+  createData('Jelly Bean', 375, 0.0, 94, <EditIcon/>),
+  createData('KitKat', 518, 26.0, 65, <EditIcon/>),
+  createData('Lollipop', 392, 0.2, 98,<EditIcon/>),
+  createData('Marshmallow', 318, 0, 81, <EditIcon/>),
+  createData('Nougat', 360, 19.0, 9, <EditIcon/>),
+  createData('Oreo', 437, 18.0, 63, <EditIcon/>),
 ];
 
 function descendingComparator(a, b, orderBy) {
@@ -88,7 +93,7 @@ const headCells = [
     id: 'name',
     numeric: false,
     disablePadding: true,
-    label: 'All Patient Name',
+    label: 'Full Name',
   },
   {
     id: 'calories',
@@ -106,7 +111,7 @@ const headCells = [
     id: 'carbs',
     numeric: true,
     disablePadding: false,
-    label: 'Carbs (g)',
+    label: 'Age',
   },
   {
     id: 'protein',
@@ -202,7 +207,7 @@ function EnhancedTableToolbar(props) {
           id="tableTitle"
           component="div"
         >
-          Nutrition
+          Patients
         </Typography>
       )}
 
