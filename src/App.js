@@ -7,19 +7,22 @@ import Doctors from './Pages/Doctors';
 import Patients from './Pages/Patients';
 // import Register from './Pages/Register';
 import Appointments from './Pages/Appointments';
+import UpdatePatient from './Components/Forms/Patients/UpdatePatient';
+import Register from './Pages/Register';
 
 
 function App() {
   return (
   
   <div className="App">
-  <Navbar/>
+
     <Routes>
-      {/* <Route path='/register'>{Register}</Route> */}
-      <Route path='/' element={<Dashboard/>}/>
-      <Route path='/appointments' element={<Appointments/>}/>
-      <Route path='/patients' element={<Patients/>}/>
-      <Route path='/doctors' element={<Doctors/>}/>
+      <Route path='/register'>{Register}</Route>
+      <Route path='/' element={<><Navbar/> <Dashboard/></>}/>
+      <Route path='/appointments' element={<><Navbar/> <Appointments/></>}/>
+      <Route path='/patients' element={<><Navbar/><Patients/></>}/>
+      <Route path='/doctors' element={<><Navbar/> <Doctors/></>}/>
+      <Route path='/updatepate' element={<><Navbar/> <UpdatePatient/></>}/>
 
     </Routes>
   </div>

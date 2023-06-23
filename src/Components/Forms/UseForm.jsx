@@ -1,20 +1,33 @@
 import React, {useState} from 'react'
 import { makeStyles } from '@material-ui/core';
 
-export  function UseForm(initialFValues) {
+export  function UseForm() {
 
-    const [values, setValues] = useState(initialFValues);
+  const [inputs, setInputs] = useState({});
 
-    const handleInputChange = e => {
-        const {name, value} = e.target
-        setValues({...values,[name]:value})
-    }
+  const handleChange = e =>{
+    const name =e.target.name;
+    const value = e.target.value;
+    setInputs(values => ({...values, [name]: value}));
 
-  return {
-    values,
-    setValues,
-    handleInputChange,
+    console.log(inputs);
   }
+
+return{
+  handleChange
+}
+  //   const [values, setValues] = useState(initialFValues);
+
+  //   const handleInputChange = e => {
+  //       const {name, value} = e.target
+  //       setValues({...values,[name]:value})
+  //   }
+
+  // return {
+  //   values,
+  //   setValues,
+  //   handleInputChange,
+  // }
 }
 
 const useStyles = makeStyles(theme => ({
