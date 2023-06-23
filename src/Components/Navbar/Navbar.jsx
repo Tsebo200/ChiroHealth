@@ -5,7 +5,7 @@ import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import { Stack } from '@mui/material';
+import { Grid, Stack } from '@mui/material';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import '../../Scss/Styles.scss';
@@ -25,14 +25,25 @@ function Navbar() {
         <Link to="/"><IconButton size="large" edge="start" color="inherit" aria-label="logo">
         <div className={styles.logo_box}></div>
         </IconButton></Link>
+
+ 
         <Typography variant="h6" component="div" >
-           ChiroHealth
+        <Link to="/"> ChiroHealth</Link>
         </Typography>
-        <Stack direction="row" spacing={11} sx={{ flexGrow: 1 }}>
-          <Link to='/'><Button color="inherit" sx={{genStyle}}>Appointment</Button></Link>
+
+        <Grid container>
+        <Stack direction="row"  sx={{ flexGrow: 0.5 }}>
+        <Grid item xs={3}>
+          <Link to='/appointments'><Button color="inherit" sx={{genStyle}}>Appointment</Button></Link>
+          </Grid>
+          <Grid item xs={3}>
           <Link to='/patients'><Button color="inherit">Patients</Button></Link>
+          </Grid>
+          <Grid item xs={3}>
           <Link to ='/doctors'><Button color="inherit">Doctors</Button></Link>
+          </Grid>
         </Stack>
+        </Grid>
         <Stack direction="row" spacing={1}>
           <Avatar></Avatar>
         </Stack>
