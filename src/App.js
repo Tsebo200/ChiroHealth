@@ -9,7 +9,7 @@ import Patients from './Pages/Patients';
 import Appointments from './Pages/Appointments';
 import UpdatePatient from './Components/Forms/Patients/UpdatePatient';
 import Register from './Pages/Register';
-
+import Login from './Pages/Login';
 
 function App() {
   return (
@@ -17,13 +17,13 @@ function App() {
   <div className="App">
 
     <Routes>
+      <Route path='/login' element={<Login/>}/>
       <Route path='/register'>{Register}</Route>
       <Route path='/' element={<><Navbar/> <Dashboard/></>}/>
       <Route path='/appointments' element={<><Navbar/> <Appointments/></>}/>
       <Route path='/patients' element={<><Navbar/><Patients/></>}/>
       <Route path='/doctors' element={<><Navbar/> <Doctors/></>}/>
       <Route path='/updatepate' element={<><Navbar/> <UpdatePatient/></>}/>
-
     </Routes>
   </div>
   );
