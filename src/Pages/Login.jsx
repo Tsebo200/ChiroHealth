@@ -31,9 +31,9 @@ export default function Login() {
                         </div>
 
                     <div className={styles.form_container}>
-                        <Box sx ={{width: 500, maxWidth:'85%', color: 'white', marginLeft: '15px'}}>
+                    <Box sx ={{width: 500, maxWidth:'85%', color: 'white', marginLeft: '15px'}}>
                             <TextField fullWidth name="email" label="Email" variant="outlined" size="small" helperText="Please enter your email"/>
-                        </Box>
+                    </Box>
 
                     <br></br>
                     <br></br>
