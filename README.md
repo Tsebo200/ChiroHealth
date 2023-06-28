@@ -30,7 +30,7 @@
     
    <br />
    <br />
-   <a href="">View Demo</a>
+   <a href="https://drive.google.com/file/d/1d61sns_ou6x7PYqPwDxf_UcDtldtHTUC/view?usp=sharing">View Demo</a>
     ·
     <a href="https://github.com/Tsebo200/ChiroHealth/issues">Report Bug</a>
     ·
@@ -240,7 +240,7 @@ What aspects of this final build contribute to the `Above And Beyond` Component 
 
 To see a run through of the application, click below:
 
-<!-- [View Demonstration](https://drive.google.com/file/d/1HZO-K5T9lN62SPSCO0Xv7ZVDJUN3lFJS/view?usp=sharing) -->
+[View Demonstration](https://drive.google.com/file/d/1d61sns_ou6x7PYqPwDxf_UcDtldtHTUC/view?usp=sharing)
 
 
 See the [open issues](https://github.com/Tsebo200/ChiroHealth/issues) for a list of proposed features (and known issues).
