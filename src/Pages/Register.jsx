@@ -14,8 +14,8 @@ export default function Register() {
 
   const [inputs, setInputs] = useState({
 
-    first: '',
-    last: '',
+    name: '',
+    surname: '',
     email: '',
     username: '',
     age: '',
@@ -33,10 +33,10 @@ const [emailError, setEmailError] = useState();
 const [usernameError, setUsernameError] = useState();
 const [ageError, setAgeError] = useState();
 const [rankError, setRankError] = useState();
-const [genderError, setGendertError] = useState();
+const [genderError, setGenderError] = useState();
 const [phoneError, setPhoneError] = useState();
 const [passwordError, setPasswordError] = useState();
-const [passwordConError, setPasswordConError] = useState();
+const [passwordConfirmError, setPasswordConfirmError] = useState();
 
 const[emailAvail, setEmailAvail] = useState();
 const[usernameAvail, setUsernameAvail] = useState();
@@ -127,9 +127,22 @@ const usernameVal = (e) => {
     setInputs({...inputs, password:value});
     if(inputs.password !== ''){setPasswordError();}
     if(!value.match(passwordRegex)){
-      setPasswordError(<MiniModalLeft message="Not Strong Enough Password must include Capital Letter, Symbol (!@#$%...) & A Digit"/>);
+      setPasswordError(<MiniModalLeft message="Not Strong Enough Password must Include Capital Letter, Symbol (!@#$%...) & A Digit"/>);
     }
   }
+
+
+  const passwordConfirmVal = (e) => {
+    const value = e.target.value;
+    setInputs({...inputs, passwordConfirm:value});
+    if(inputs.password === value){
+      setPasswordConfirmError();
+    } else{
+        setPasswordConfirmError(<MiniModalRight message="Your password does not match"/>)
+    }
+  }
+
+
 
 
 
@@ -140,9 +153,48 @@ const usernameVal = (e) => {
     setInputs(values => ({...values, [name]: value}));
   }
 
-const handleSubmit = (event) => {
-  event.preventDefault();
+const handleSubmit = (e) => {
+  e.preventDefault();
   console.log(inputs);
+  
+  if(inputs.name === ' '){
+    setNameError(<MiniModalLeft message="What is your Name"/>);
+  } else{
+    setNameError();
+  }
+
+  if(inputs.surname === ' '){
+    setSurnameError(<MiniModalRight message="What is your Surname"/>);
+  } else{
+    setSurnameError();
+  }
+
+  if(inputs.username === ' '){
+    setNameError(<MiniModalLeft message="please provide Username"/>);
+  } else{
+    setUsernameError();
+  }
+
+  if(inputs.email === ' '){
+    setEmailError(<MiniModalRight message="please provide Email"/>);
+  } else{
+    setEmailError();
+  }
+
+  if(inputs.age === ' '){
+    setAgeError(<MiniModalLeft message="How old are you"/>);
+  } else{
+    setAgeError();
+  }
+
+
+  if(inputs.gender === ' '){
+    setGenderError(<MiniModalRight message="How old are you"/>);
+  } else{
+    setGenderError();
+  }
+
+
 
   axios.post('http://localhost/api/AddPatient.php', inputs)
   .then(function(res){
