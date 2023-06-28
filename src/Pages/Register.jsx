@@ -7,7 +7,62 @@ import axios from 'axios';
 
 export default function Register() {
 
-  const [inputs, setInputs] = useState({});
+  const [inputs, setInputs] = useState({
+
+    first: '',
+    last: '',
+    email: '',
+    username: '',
+    age: '',
+    rank: '',
+    gender: '',
+    contact: '',
+    password: '',
+    passwordCon: '',  
+  });
+
+
+const [nameError, setNameError] = useState();
+const [surnameError, setSurnameError] = useState();
+const [emailError, setEmailError] = useState();
+const [usernameError, setusernameError] = useState();
+const [ageError, setAgeError] = useState();
+const [rankError, setRankError] = useState();
+const [genderError, setGendertError] = useState();
+const [phoneError, setPhoneError] = useState();
+const [passwordError, setPasswordError] = useState();
+const [passwordConError, setPasswordConError] = useState();
+
+const[emailAvail, setEmailAvail] = useState();
+const[userAvail, setUserAvail] = useState();
+
+const[emailIcon, setEmailIcon] = useState();
+const[userIcon, setUserIcon] = useState();
+
+
+  const nameVal = (e) => {
+    const value = e.target.value;
+    setInputs({...inputs, first: value});
+    if(inputs.name !== ' '){setNameError();}
+
+    }
+
+    const surnameVal = (e) => {
+      const value = e.target.value;
+      setInputs({...inputs, first: value});
+      if(inputs.surname !== ' '){setSurnameError();}
+      }
+
+const emailVal = (e) => {
+  const mailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  const value = e.target.value;
+  setInputs({...inputs, email: value});
+  if(inputs.email !== ''){setEmailError();}
+}
+
+
+  }
+
 
   const handleChange = (event) => {  
     const name = event.target.name;
@@ -23,8 +78,6 @@ const handleSubmit = (event) => {
   .then(function(res){
       console.log(res);
   });
-
-
   }
 
 
@@ -40,11 +93,11 @@ const handleSubmit = (event) => {
               </div>
               <div className={styles.form_container}>
               <Grid container>
-                <div className={styles.imageArea}>
+                {/* <div className={styles.imageArea}>
                     <p className="upload-text">Please Upload a Profile Image</p>
                     <input name="imageUrl" className={styles.imgInput} type="file" onChange={imageVal} />
                     <div id="profileimg" className={styles.profile_img}></div>  
-                    </div>
+                    </div> */}
                   <Grid item xs = {6}>
                       <Box sx={{width: 500, maxWidth:'85%', color: 'white', marginLeft: '15px', float: 'left'}}>  
                           <TextField fullWidth name="name" type='text' label="Name" variant="outlined" size="small" helperText="Enter First Name" onChange={handleChange}/>
@@ -113,7 +166,7 @@ const handleSubmit = (event) => {
               </Grid>
             </div>
             </div>
-          </div>
+            </div>
             <div className={styles.right}>
                 <div className={styles.logo_box}></div>
             </div>
