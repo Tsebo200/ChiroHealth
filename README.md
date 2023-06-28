@@ -20,7 +20,7 @@
 <p align="center">
 
   <a href="https://github.com/Tsebo200/ChiroHealth">
-    <img src="src/Assets/Logo Hover.png" align="center" alt="../src/Assets/Logo.png" width="140" height="140">
+    <img src="src/Assets/Logo1.svg" align="center" alt="src/Assets/Logo2.svg"" width="140" height="140">
   </a>
   
   <h3 align="center">ChiroHealth</h3>
