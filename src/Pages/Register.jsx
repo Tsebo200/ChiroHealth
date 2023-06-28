@@ -2,13 +2,13 @@ import React from 'react';
 import { useState } from 'react';
 import styles from '../Pages/Register.module.scss';
 import { Box, Button, Grid, TextField } from '@mui/material';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import axios from 'axios';
 import MiniModalLeft from '../Components/props/MiniModalLeft';
 import Okay from '../Assets/okay.svg';
 import NotOkay from '../Assets/notOkay.svg';
 import MiniModalRight from '../Components/props/MiniModalRight';
-
+// import { useNavigate } from 'react-router-dom';
 
 export default function Register() {
 
@@ -21,12 +21,12 @@ export default function Register() {
     age: '',
     rank: '',
     gender: '',
-    contact: '',
+    phone: '',
     password: '',
     passwordCon: '',  
   });
 
-
+// creating Usestates for the validation and authentication procedure
 const [nameError, setNameError] = useState();
 const [surnameError, setSurnameError] = useState();
 const [emailError, setEmailError] = useState();
@@ -44,7 +44,7 @@ const[usernameAvail, setUsernameAvail] = useState();
 const[emailIcon, setEmailIcon] = useState();
 const[usernameIcon, setUsernameIcon] = useState();
 
-
+// Validating to check if the name of user/receptionist is avaliable on the Databsse
 const nameVal = (e) => {
   const value = e.target.value;
   setInputs({...inputs, first: value});
@@ -67,9 +67,10 @@ const emailVal = (e) => {
   }
 }
 
+// Authenticating the receptionist email to prove that the email is valid within the databasse
 const authenticateEmail = () => {
   axios.post('http://localhost/api/authenticateEmail.php', inputs)
-  .then(function(res){
+  .then((res)=>{
     console.log(res);
     if(res.data ===  "Available"){
       setEmailIcon(Okay)
@@ -94,7 +95,7 @@ const usernameVal = (e) => {
 
   const authenticateReceptionist = () => {
     axios.post('http://localhost/api/authenticateReceptionist.php', inputs)
-    .then(function(res){
+    .then((res)=>{
       console.log(res);
       if(res.data ===  "Available"){
         setUsernameIcon(Okay);
@@ -195,9 +196,48 @@ const handleSubmit = (e) => {
   }
 
 
+  if(inputs.phone === ' '){
+    setPhoneError(<MiniModalLeft message="please provide phone numbers"/>);
+  } else{
+    setPhoneError();
+  }
+
+  if(inputs.rank === ' '){
+    setRankError(<MiniModalRight message="How old are you"/>);
+  } else{
+    setRankError();
+  }
+
+  if(inputs.password === ' '){
+    setPasswordError(<MiniModalLeft message="Please provide a password"/>);
+  } else{
+    setPasswordError();
+  }
+
+  if(inputs.passwordConfirm === ' '){
+    setPasswordConfirmError(<MiniModalRight message="please confirm password"/>);
+  } else{
+    setPasswordConfirmError();
+  }
+
+  let result = Object.values(inputs).some(o => o === '');
+  // checks if there is an empty object within the key value pair
+
+  if(result){
+    console.log("There is an Error");
+  } else{
+    axios.post("https://localhost/api/authenticateReceptionist.php")
+    .then((res) => {
+      console.log(res);
+
+      if(res.status === 200){
+        Navigate("/login");
+      }
+    })
+  }
 
   axios.post('http://localhost/api/AddPatient.php', inputs)
-  .then(function(res){
+  .then((res) => {
       console.log(res);
   });
   }
@@ -222,12 +262,14 @@ const handleSubmit = (e) => {
                     </div> */}
                   <Grid item xs = {6}>
                       <Box sx={{width: 500, maxWidth:'85%', color: 'white', marginLeft: '15px', float: 'left'}}>  
-                          <TextField fullWidth name="name" type='text' label="Name" variant="outlined" size="small" helperText="Enter First Name" onChange={handleChange}/>
+                      {nameError}
+                          <TextField fullWidth name="name" type='text' label="Name" variant="outlined" size="small" helperText="Enter First Name" onChange={nameVal}/>
                       </Box>
               </Grid>
 
               <Grid item xs = {6}>
                   <Box sx={{width: 500, maxWidth:'85%', color: 'white', marginLeft: '15px', float: 'left'}}>  
+                  {surnameError}
                       <TextField fullWidth name="surname" type='text' label="Surname" variant="outlined" size="small" helperText="Enter Surname" onChange={handleChange}/>
                   </Box>
               </Grid>
