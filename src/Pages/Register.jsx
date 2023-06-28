@@ -4,6 +4,11 @@ import styles from '../Pages/Register.module.scss';
 import { Box, Button, Grid, TextField } from '@mui/material';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import MiniModalLeft from '../Components/props/MiniModalLeft';
+import Okay from '../Assets/okay.svg';
+import NotOkay from '../Assets/notOkay.svg';
+import MiniModalRight from '../Components/props/MiniModalRight';
+
 
 export default function Register() {
 
@@ -25,7 +30,7 @@ export default function Register() {
 const [nameError, setNameError] = useState();
 const [surnameError, setSurnameError] = useState();
 const [emailError, setEmailError] = useState();
-const [usernameError, setusernameError] = useState();
+const [usernameError, setUsernameError] = useState();
 const [ageError, setAgeError] = useState();
 const [rankError, setRankError] = useState();
 const [genderError, setGendertError] = useState();
@@ -34,34 +39,99 @@ const [passwordError, setPasswordError] = useState();
 const [passwordConError, setPasswordConError] = useState();
 
 const[emailAvail, setEmailAvail] = useState();
-const[userAvail, setUserAvail] = useState();
+const[usernameAvail, setUsernameAvail] = useState();
 
 const[emailIcon, setEmailIcon] = useState();
-const[userIcon, setUserIcon] = useState();
+const[usernameIcon, setUsernameIcon] = useState();
 
 
-  const nameVal = (e) => {
+const nameVal = (e) => {
+  const value = e.target.value;
+  setInputs({...inputs, first: value});
+  if(inputs.name !== ' '){setNameError();}
+  }
+
+  const surnameVal = (e) => {
     const value = e.target.value;
     setInputs({...inputs, first: value});
-    if(inputs.name !== ' '){setNameError();}
-
+    if(inputs.surname !== ' '){setSurnameError();}
     }
-
-    const surnameVal = (e) => {
-      const value = e.target.value;
-      setInputs({...inputs, first: value});
-      if(inputs.surname !== ' '){setSurnameError();}
-      }
 
 const emailVal = (e) => {
   const mailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   const value = e.target.value;
   setInputs({...inputs, email: value});
   if(inputs.email !== ''){setEmailError();}
+  if(!value.match(mailRegex)){
+    setEmailError(<MiniModalLeft message="Email is not a valid format...."/>);
+  }
 }
 
+const authenticateEmail = () => {
+  axios.post('http://localhost/api/authenticateEmail.php', inputs)
+  .then(function(res){
+    console.log(res);
+    if(res.data ===  "Available"){
+      setEmailIcon(Okay)
+      setEmailAvail();
+    } else if(res.data === "Not Available"){
+        setEmailIcon(NotOkay);
+        setEmailAvail(<MiniModalRight message="Email is not Available"/>);
+    } else if(res.data === ''){
+      setEmailIcon();
+      setEmailAvail();
+      setEmailError();
+    }
+  });
+}
 
+const usernameVal = (e) => {
+  const value = e.target.value.trim();
+  setInputs({...inputs, first: value});
+  if(inputs.username !== ' '){setUsernameError();}
   }
+
+
+  const authenticateReceptionist = () => {
+    axios.post('http://localhost/api/authenticateReceptionist.php', inputs)
+    .then(function(res){
+      console.log(res);
+      if(res.data ===  "Available"){
+        setUsernameIcon(Okay);
+        setUsernameAvail();
+      } else if(res.data === "Not Available"){
+        setUsernameIcon(NotOkay);
+        setUsernameAvail(<MiniModalLeft message="Username is not Available" />);
+      } else if(res.data === ''){
+        setUsernameIcon();
+        setUsernameAvail();
+        setUsernameError();
+      }
+    });
+  }
+
+  const contactRegex = (e) => {
+    const contactRegex = /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/;
+    const value = e.target.value;
+    setInputs({...inputs, phone: value});
+    if(inputs.email !== ''){setPhoneError();}
+    if(!value.match(contactRegex)){
+      setPhoneError(<MiniModalLeft message="Please enter valid phone number"/>);
+    }
+  }
+
+
+  const passwordVal = (e) => {
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(\W|_)).{5,}$/ ;
+    const value = e.target.value;
+    setInputs({...inputs, password:value});
+    if(inputs.password !== ''){setPasswordError();}
+    if(!value.match(passwordRegex)){
+      setPasswordError(<MiniModalLeft message="Not Strong Enough Password must include Capital Letter, Symbol (!@#$%...) & A Digit"/>);
+    }
+  }
+
+
 
 
   const handleChange = (event) => {  
