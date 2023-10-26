@@ -92,6 +92,23 @@ const usernameVal = (e) => {
   if(inputs.username !== ' '){setUsernameError();}
   }
 
+  const validateUser = () => {
+    axios.post('http://localhost/api/authenticateUser.php', inputs)
+    .then((res)=>{
+      console.log(res);
+      if(res.data === "Available"){
+        setUsernameIcon(Okay);
+        setUsernameAvail();
+      } else if(res.data === "Not Available"){
+        setUsernameIcon(NotOkay);
+        setUsernameAvail(<MiniModalRight message="Email is not Available" />);
+      } else if(res.data === ''){
+        setEmailIcon();
+        setEmailAvail();
+        setEmailError();
+      }
+    });
+  }
 
   const authenticateReceptionist = () => {
     axios.post('http://localhost/api/authenticateReceptionist.php', inputs)
@@ -142,8 +159,6 @@ const usernameVal = (e) => {
         setPasswordConfirmError(<MiniModalRight message="Your password does not match"/>)
     }
   }
-
-
 
 
 

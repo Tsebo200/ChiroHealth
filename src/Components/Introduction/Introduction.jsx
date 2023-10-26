@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../Introduction/Introduction.module.scss';
-import Calendar from '../Calendar/Calendar';
+import BasicDateCalendar from '../Calendar/BasicDateCalendar';
+
 
 function Introduction() {
   return (
@@ -36,7 +37,7 @@ function Introduction() {
               </div>
             
               </div>
-              <Calendar/>
+              <BasicDateCalendar/>
           </div>
         
         </div>
