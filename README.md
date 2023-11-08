@@ -3,7 +3,7 @@
 <!-- Repository Information & Links-->
 <br />
 
-![GitHub repo size](https://img.shields.io/github/repo-size/Tsebo200/ChiroHe)
+![GitHub repo size](https://img.shields.io/github/repo-size/Tsebo200/ChiroHealth)
 ![GitHub watchers](https://img.shields.io/github/watchers/Tsebo200/ChiroHealth)
 ![GitHub language count](https://img.shields.io/github/languages/count/Tsebo200/ChiroHealth)
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/Tsebo200/ChiroHealth)
@@ -156,6 +156,8 @@ This is my first phase
 <img src="/Assets/EditPatients.png" align="center"><br>
 
 ### ER Diagram
+
+<img src="/Assets/ERDiagram" align="center"><br>
 
 ### Custom UI
 I utulised Material UI
