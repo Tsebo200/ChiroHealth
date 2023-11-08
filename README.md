@@ -131,7 +131,10 @@ In the register page, the user (Receptionist) needs to add all their information
 ### Functionality 
 <!-- A useNavigate hook was utilised so that when the user clicks on the sign in/create account button, they will be redirected to the dashboard and their email address will be added to the local storage. If the user clicked on the create account button their information will be added to the MYSQL database. The opposite will happen whereas if the user tried to redirect to the dashboard without registering or logging in then they will immediately be redirected to the sign in page, a useNavigate and useEffect was utilised to accomplish this function<br><br> -->
 
-
+The login feature 
+- The receptionist will not be able to access the homepage if they are not logged in
+- Authentication has been setup so the form will respond if user only entered the email 
+- if password or email does not match the form will give that response and receptionist will not be able to access the homepage
 <!-- The functionality for the logOut button was a useNavigate and a sessionStorage.clear(). -->
 <br><br>
 
