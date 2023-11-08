@@ -151,13 +151,13 @@ The style I was going for was a fresh and modern look of websites that would be 
 
 ### Wireframes
 This is my first phase
-<img src="/Assets/Dashboard.png" align="center"><br>
+<img src="Assets/Dashboard.png" align="center"><br>
 
-<img src="/Assets/EditPatients.png" align="center"><br>
+<img src="Assets/EditPatients.png" align="center"><br>
 
 ### ER Diagram
 
-<img src="/Assets/ERDiagram" align="center"><br>
+<img src="Assets/ERDiagram.png" align="center"><br>
 
 ### Custom UI
 I utulised Material UI
