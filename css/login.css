@@ -1,0 +1,143 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+.main_container{
+    width: 100vw;
+    height: 100vh;
+    background: #161E31;
+    float: left;
+}
+
+.inner_container{
+    width: 70%;
+    height: 70%;
+    margin: auto;
+    margin-top: 120px;
+}
+
+.left{
+    width: 50%;
+    height: 100%;
+    border-radius: 20px 0px 0px 20px;
+    background: url('../Assets/SignIn.jpg');
+    background-position: center;
+    background-size: cover;
+    float: left;
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
+    background-image: url('../Assets/Logo1.svg');
+    margin-left: 40px;
+    margin-top: 20px;
+}
+
+.right{
+    width: 50%;
+    height: 100%;
+    border-radius: 0px 20px 20px 0px;
+    background: #161E31;
+    float: left;
+}
+
+.inner_right_container{
+    width: 70%;
+    height: 85%;
+    padding-top: 15px;
+    padding-left: 15px;
+    margin: auto;
+    border-radius: 10px;
+    margin-top: 40px;
+    background: #C9915D;
+}
+
+.intro_container{
+    width: 70%;
+    height: 25%;
+    text-align: left;
+    float: left;
+}
+
+.login_heading{
+    margin: 0;
+    padding: 0;
+    color: #FFEDE0;
+    font-family: avenir;
+    float: left;
+}
+
+.right{
+    background: #FFEDE0;
+}
+
+.intro_login_text{
+    color: #FFEDE0;
+    font-family: avenir;
+    float: left;
+}
+
+.form_container{
+    width: 100%;
+    height: 35%;
+    margin-top: 30px;
+    /* background: red; */
+    float: left;
+}
+
+.email_input{
+    width: 280px;
+    height: 40px;
+    font-size: 15px;
+    padding-left: 15px;
+    border-radius: 5px;
+    border-style: none;
+    margin-left: 15px;
+    /* background-color: transparent; */
+}
+
+.spacer{
+    width: 10px;
+    height: 30px;
+}
+
+.forgot_pass{
+    margin-left: 200px;
+    font-family: avenir;
+    margin-top: 20px;
+    color: #FFEDE0;
+}
+
+.login_btn{
+    width: 280px;
+    height: 40px;
+    font-size: 15px;
+    padding-left: 15px;
+    border-radius: 5px;
+    /* font-family: avenir; */
+    border-style: none;
+    margin-top: 5px;
+    margin-left: 25px;
+    /* background: white; */
+}
+
+.login_btn:hover{
+    background: #FFEDE0;
+}
+
+.new_user_text{
+    font-family: avenir;
+    margin-top: 400px;
+    /* color: #FFEDE0; */
+}
+
+.signup_link{
+    text-decoration: none;
+    font-family: avenir;
+    color: #FFEDE0; 
+    margin-top: -40px;
+    margin-left: 85px;
+    float: left;
+}

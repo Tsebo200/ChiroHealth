@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/add.css" />
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <div class="main_container">
+        <div class="header"> 
+            <div class="logo"></div>
+            <h2>Add Patient</h2>
+                <div class="header_icons">
+                    <div class="person_icon_container"><ion-icon name="person"></ion-icon></div>
+                    <div class="right_chev_container"><ion-icon name="chevron-forward-outline"></ion-icon></div>
+                </div>
+            <hr>
+        </div>
+<!-- end of header -->
+
+            <div class="mid_container">
+                <div class="extra_employee_details_box">
+                    <div class="username-box">
+                        <h2>Username</h2>
+                    </div>
+                    <div class="pillmenu">
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <br>
+                        <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="false">Country</a>
+                        <hr>
+                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Retail</a>
+                        <hr>
+                        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Business</a>
+                        <hr>
+                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
+                      </div>
+                    </div>
+                </div>
+<!-- End of extra empoloyee details Menu -->
+
+                <div class="crud_table">
+                            <table class="table">
+                                <thead class="thead-dark">
+                                    <div class="add_btn">
+                                        <center><button type="button" class="btn btn-light btn-block">Add New Employee</button></center>
+                                    </div>
+                                <tr>
+                                    <th scope="col">Action</th>
+                                    <th scope="col">ID#</th>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Last</th>
+                                    <th scope="col">Role</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th><div class="btn_group">
+                                        <div class="edit_btn">
+                                            <button type="button" class="btn btn-warning"><ion-icon name="create-outline"></ion-icon></button>
+                                        </div>
+                                        <div class="delete_btn">
+                                            <button type="button" class="btn btn-danger"><ion-icon name="close-circle-outline"></ion-icon></button>
+                                        </div>
+                                    </div></th>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>Store Manager</td>
+                                </tr>
+                                <tr>
+                                    <th><div class="btn_group">
+                                        <div class="edit_btn">
+                                            <button type="button" class="btn btn-warning"><ion-icon name="create-outline"></ion-icon></button>
+                                        </div>
+                                        <div class="delete_btn">
+                                            <button type="button" class="btn btn-danger"><ion-icon name="close-circle-outline"></ion-icon></button>
+                                        </div>
+                                    </div></th>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>Product Manager</td>
+                                </tr>
+                                <tr>
+                                    <th><div class="btn_group">
+                                        <div class="edit_btn">
+                                            <button type="button" class="btn btn-warning"><ion-icon name="create-outline"></ion-icon></button>
+                                        </div>
+                                        <div class="delete_btn">
+                                            <button type="button" class="btn btn-danger"><ion-icon name="close-circle-outline"></ion-icon></button>
+                                        </div>
+                                    </div></th>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>Retail</td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                </div>
+            </div>
+    </div>
+    <!-- end of main container -->
+</body>
+</html>

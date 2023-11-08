@@ -157,6 +157,8 @@ This is my first phase
 
 <img src="src/Assets/EditPatients.png" align="center"><br>
 
+### ER Diagram
+
 ### Custom UI
 I utulised Material UI
 <!-- <img src="src/Assets/DashboardBtnImage.png" align="center">
