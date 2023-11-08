@@ -160,7 +160,7 @@ This is my first phase
 <img src="Assets/ERDiagram.png" align="center"><br>
 
 ### Custom UI
-I utulised Material UI
+I took inspiration from Material UI
 <!-- <img src="src/Assets/DashboardBtnImage.png" align="center">
 <br>
 
@@ -260,7 +260,7 @@ Distributed under the MIT License. See `LICENSE` for more information.\
 <!-- LICENSE -->
 ## Contact
 
-* **Tsebo Ramonyalioa** - [email@address](mailto:200200@virtualwidnow.co.za) - [@instagram_handle](https://www.instagram.com/inspiration200200/) 
+* **Tsebo Ramonyalioa** - [email@address](mailto:tsebo.ramonyalioa.an@gmail.com) - [@instagram_handle](https://www.instagram.com/inspiration__200/) 
 * **Project Link** - https://github.com/Tsebo200/ChiroHealth
 
 <!-- ACKNOWLEDGEMENTS -->
