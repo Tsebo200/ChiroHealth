@@ -161,6 +161,8 @@ This is my first phase
 
 ### Custom UI
 I took inspiration from Material UI
+<img src="Assets/inspirationMUI.png" align="center"><br>
+
 <!-- <img src="src/Assets/DashboardBtnImage.png" align="center">
 <br>
 
