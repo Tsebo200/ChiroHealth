@@ -219,6 +219,12 @@ What aspects of this final build contribute to the `Above And Beyond` Component 
 
 ### Mockups
 
+<img src="Assets/MockOne.png" align="center"><br><br><br>
+
+<img src="Assets/MockTwo.png" align="center"><br><br><br>
+
+<img src="Assets/MockThree.png" align="center"><br><br><br>
+
 <!-- ![image6](https://github.com/Tsebo200/ChiroHealth/blob/main/src/Assets/MockOne.png)
 
 <br>
