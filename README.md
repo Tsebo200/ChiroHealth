@@ -20,7 +20,7 @@
 <p align="center">
 
   <a href="https://github.com/Tsebo200/ChiroHealth">
-    <img src="src/Assets/Logo1.svg" align="center" alt="src/Assets/Logo2.svg"" width="140" height="140">
+    <img src="/Assets/Logo1.svg" align="center" alt="src/Assets/Logo2.svg"" width="140" height="140">
   </a>
   
   <h3 align="center">ChiroHealth</h3>
@@ -73,8 +73,6 @@ My Project is a budget calculator, that calculates breadwinners earnings. The br
 
 ### Built With
 
-* [React](https://reactjs.org/)
-* [MUI] (https://mui.com/)
 * [PHP](https://www.php.net/)
 * [MYSQL](https://www.mysql.com/)
 
@@ -153,9 +151,9 @@ The style I was going for was a fresh and modern look of websites that would be 
 
 ### Wireframes
 This is my first phase
-<img src="src/Assets/Dashboard.png" align="center"><br>
+<img src="/Assets/Dashboard.png" align="center"><br>
 
-<img src="src/Assets/EditPatients.png" align="center"><br>
+<img src="/Assets/EditPatients.png" align="center"><br>
 
 ### ER Diagram
 
